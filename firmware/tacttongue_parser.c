@@ -1,3 +1,4 @@
+/* Online C Compiler and Editor */
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -5,120 +6,114 @@
 
 int NUM_CHANNELS = 18;
 int NUM_PARAMETER_ARRAY = 6;
+char buf[] ="[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]:[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]:[9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9]:[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]:[150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150]:[5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]";
+char *array[6];
 
-struct {
-    int *ele_array;
-    int *pp_array;
-    int *PP_array;
-    int *ibn_array;
-    int *ibp_array;
-    int *obn_array;
-    
-}tactongue_command;
 
-void init_tactongue_command(){
-    tactongue_command.ele_array = (int*)malloc(NUM_CHANNELS);
-    tactongue_command.pp_array = (int*)malloc(NUM_CHANNELS);
-    tactongue_command.PP_array = (int*)malloc(NUM_CHANNELS);
-    tactongue_command.ibn_array = (int*)malloc(NUM_CHANNELS);
-    tactongue_command.ibp_array = (int*)malloc(NUM_CHANNELS);
-    tactongue_command.obn_array = (int*)malloc(NUM_CHANNELS);
-}
-
-int main ()
-{
-    char buf[] ="[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]:[5,5,5]:[7,7,7]:[150,150,150]:[5,5,5]:[1500,1500,1500]";
-    int i,j = 0;
+void getCommandArray(){
     char *p = strtok (buf, ":");
-    //char **array =  (char**)malloc(NUM_PARAMETER_ARRAY);
-    char *array[6];
-    char *endptr, *ptr;
-    int count = 0;
-    long numbers[512];
+    int count = 0; int i =0;
     
-    init_tactongue_command();
-    
-
     while (p != NULL)
     {
         array[i++] = p;
         p = strtok (NULL, ":");
     }
-
-    for (i = 0; i < NUM_PARAMETER_ARRAY; ++i){
-        printf("%s\n", array[i]);
-        printf("%d\n", (int)strlen(array[i]));
-    }
-    ptr= array[0];
-    endptr = array[0];
-    i=0;
-    count= 0;
-    // for(j = 0 ; j < NUM_PARAMETER_ARRAY;j++){
-    //     while (array[j][i] != '\0'){
-    //         if (isdigit(array[j][i])){
-    //             switch(j){
-    //                 case 0: tactongue_command.ele_array[count++] = atoi(&array[j][i]);
-    //                     i++;
-    //                     break;
-    //                 case 1: tactongue_command.pp_array[count++] = atoi(&array[j][i]);
-    //                     i++;
-    //                     break;
-                        
-    //                 case 2: tactongue_command.PP_array[count++] = atoi(&array[j][i]);
-    //                     i++;
-    //                     break;
-    //                 case 3: tactongue_command.ibn_array[count++] = atoi(&array[j][i]);
-    //                     i++;
-    //                     break;
-                        
-    //                 case 4: tactongue_command.ibp_array[count++] = atoi(&array[j][i]);
-    //                     i++;
-    //                     break;
-                        
-    //                 case 5: tactongue_command.obn_array[count++] = atoi(&array[j][i]);
-    //                     i++;
-    //                     break;
-    //             }
-                
-                        
-                
-    //         }
-    //         else{
-    //             i++;
-    //         }
-            
-    //     }
-        
-    // }
-    
-    
-    
-    while (array[0][i] != '\0') {
-    if (isdigit(array[0][i])) {
-        tactongue_command.ele_array[count++] = atoi(&array[0][i]);
-        i++;
-        
-    } else {
-        i = i + 1;
-    }
 }
 
-    count = 0;
-    i=0;
-    while (array[1][i] != '\0') {
-    if (isdigit(array[1][i])) {
-        tactongue_command.pp_array[count++] = atoi(&array[1][i]);
-        i++;
-        
-    } else {
-        i = i + 1;
+
+char* substr(const char *src, int m, int n)
+{
+    // get the length of the destination string
+    int len = n - m;
+ 
+    // allocate (len + 1) chars for destination (+1 for extra null character)
+    char *dest = (char*)malloc(sizeof(char) * (len + 1));
+ 
+    // extracts characters between m'th and n'th index from source string
+    // and copy them into the destination string
+    for (int i = m; i < n && (*(src + i) != '\0'); i++)
+    {
+        *dest = *(src + i);
+        dest++;
+    }
+ 
+    // null-terminate the destination string
+    *dest = '\0';
+ 
+    // return the destination string
+    return dest - len;
+}
+
+
+void getValuesFromCommandArray(char* buf, int* valueArray){
+    int count = 0; int i =0;
+    char* commandArray = substr(buf, 1, strlen(buf)-1);
+    printf("%s\n", commandArray);
+    char *p = strtok (commandArray, ",");
+    char* temp;
+    
+    
+    while (p != NULL)
+    {
+        if(isdigit(*p)){
+            valueArray[i] = atoi(p);
+            printf(" i = %d, %d\n", i, valueArray[i]);
+            i++;
+        }
+        p = strtok (NULL, ",");
     }
 }
-    for(i = 0; i < NUM_CHANNELS; i++){
-        printf("%d\n", (int)tactongue_command.ele_array[i]);
-        printf("%d\n", (int)tactongue_command.pp_array[i]);
+int main()
+{
+    int i = 0, count=0;
+   // init_tactongue_command();
+    getCommandArray();
+    int ele_array[18];
+    int pw_array[18];
+    int pp_array[18];
+    int ibn_array[18];
+    int ibp_array[18];
+    int obn_array[18];
+   
+    getValuesFromCommandArray(array[0], ele_array);
+    getValuesFromCommandArray(array[1], pw_array);
+    getValuesFromCommandArray(array[2], pp_array);
+    getValuesFromCommandArray(array[3], ibn_array);
+    getValuesFromCommandArray(array[4], ibp_array);
+    getValuesFromCommandArray(array[5], obn_array);
+    
+    for(i=0; i < NUM_CHANNELS; i++){
+        printf("%d, ", ele_array[i]);
+    }
+    printf("\n");
+    
+    for(i=0; i < NUM_CHANNELS; i++){
+        printf("%d, ", pw_array[i]);
+    }
+    printf("\n");
+    
+    for(i=0; i < NUM_CHANNELS; i++){
+        printf("%d, ", pp_array[i]);
+    }
+    printf("\n");
+    
+    for(i=0; i < NUM_CHANNELS; i++){
+        printf("%d, ", ibn_array[i]);
     }
     
-        
+    printf("\n");
+    
+    for(i=0; i < NUM_CHANNELS; i++){
+        printf("%d, ", ibp_array[i]);
+    }
+    printf("\n");
+    
+    for(i=0; i < NUM_CHANNELS; i++){
+        printf("%d, ", obn_array[i]);
+    }
+    
+    
+    
     return 0;
 }
