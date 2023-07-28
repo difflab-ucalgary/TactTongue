@@ -10,7 +10,7 @@ Hardware: this folder contains the design schematics for the Arduino Uno and Nan
 
 Firmware: contains the Arduino source code for generating the pulses that are sent to the electrode array.
 
-Software: contains the source code for sending stimulation commands to the Arduino. The original TactTongue software has been written in WPF (C#.NET). The software does all the sanity checks before sending the commands to the TactTongue hardware. To ensure a wider adoption, the repository also contains the minimal Python version, allowing for sensing commands through a User Interface.
+Software: contains the source code for sending stimulation commands to the Arduino. The original TactTongue software has been written in WPF (C#.NET). The software does all the sanity checks before sending the commands to the TactTongue hardware. To ensure a wider adoption, the repository also contains the minimal Python version, allowing for sending commands through a User Interface.
 
 
 # Note
