@@ -18,5 +18,12 @@ Due to the concerns about unsafe AC Wall adaptors on the market, we recommend th
 
 Code cleaning and Optimization are still in progress.
 
+# Citation
+
+When using or building upon this device in an academic publication, please consider citing as follows:
+
+Dinmukhammed Mukashev, Nimesha Ranasinghe, and Aditya Shekhar Nittala. 2023. TactTongue: Prototyping ElectroTactile Stimulations on the Tongue. In The 36th Annual ACM Symposium on User Interface Software and Technology (UIST ’23), October 29-November 1, 2023, San Francisco, CA, USA. ACM, New York, NY, USA, 13 pages. https://doi.org/10.1145/3586183.3606829
+
+
 # Acknowledgements
 This library was adapted from work by Kurt Kaczmarek and Joel Moritz Jr.
