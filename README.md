@@ -7,6 +7,10 @@ Due to the concerns about unsafe AC Wall adaptors on the market, we recommend th
 
 Code cleaning and Optimization are still in progress.
 
+# Organization
+The repository
 
 
 
+# Acknowledgements
+This library was adapted from work by Kurt Kaczmarek and Joel Moritz Jr.
