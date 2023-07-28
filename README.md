@@ -1,2 +1,7 @@
-# TactTongue
-Software design tool for prototyping haptic feedback on Tongue
+# TactTongue: 
+
+This is the repository that contains the hardware and software ecosystem for the "TactTongue: Prototyping Electrotactile Stimulations on the Tongue" paper (ACM UIST 2023).
+
+
+
+
