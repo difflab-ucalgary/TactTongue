@@ -2,10 +2,6 @@
 
 This is the repository that contains the hardware and software ecosystem for the "TactTongue: Prototyping Electrotactile Stimulations on the Tongue" paper (ACM UIST 2023).
 
-# Note
-Due to the concerns about unsafe AC Wall adaptors on the market, we recommend that the device be powered through a computer USB or a battery.
-
-Code cleaning and Optimization are still in progress.
 
 # Organization
 The repository is organized as follows:
@@ -17,6 +13,10 @@ Firmware: contains the Arduino source code for generating the pulses that are se
 Software: contains the source code for sending stimulation commands to the Arduino. The original TactTongue software has been written in WPF (C#.NET). The software does all the sanity checks before sending the commands to the TactTongue hardware. To ensure a wider adoption, the repository also contains the minimal Python version, allowing for sensing commands through a User Interface.
 
 
+# Note
+Due to the concerns about unsafe AC Wall adaptors on the market, we recommend that the device be powered through a computer USB or a battery.
+
+Code cleaning and Optimization are still in progress.
 
 # Acknowledgements
 This library was adapted from work by Kurt Kaczmarek and Joel Moritz Jr.
