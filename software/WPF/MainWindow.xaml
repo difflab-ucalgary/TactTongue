@@ -1,235 +1,221 @@
-﻿<Window x:Class="TactileTongue.MainWindow"
+﻿<Window x:Class="TactTongue.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TactileTongue"
+        xmlns:local="clr-namespace:TactTongue_Test"
         mc:Ignorable="d"
-        Title="TactTongue" Height="1080" Width="1920">
+        Title="MainWindow" Height="720" Width="1200">
     <Grid>
+        <Image HorizontalAlignment="Left"  x:Name="tongue_background" Margin="458,226,0,0" 
+    VerticalAlignment="Top" Source="Resources/tongue_background.png" Opacity="0.5" Height="275" Width="209"/>
+
+
+        <Label x:Name="label1" Content="MicroController Status" HorizontalAlignment="Left" Foreground="Black" Margin="26,10,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" Height="40" Width="240"/>
+        <Label x:Name="label3" Content="Ports:" HorizontalAlignment="Left" Margin="31,50,0,0" Foreground="Black" VerticalAlignment="Top" Width="53" Height="34" FontFamily="Open Sans" FontSize="18"/>
+        <ComboBox x:Name="port_names" HorizontalAlignment="Left" Margin="102,50,0,0" VerticalAlignment="Top" Width="96" Height="34" FontFamily="Open Sans" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="connect_button" Content="Connect" HorizontalAlignment="Left" Margin="225,50,0,0" VerticalAlignment="Top" Width="76" Height="33" FontFamily="Open Sans" FontSize="18" Click="connect_button_Click" />
+        <TextBlock x:Name="status" Text="Status: " Foreground="Black" HorizontalAlignment="Left" Margin="35,90,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="18" Height="29" Width="53"/>
+        <TextBlock x:Name="status_label" Text="Disconnected"  Foreground="Black" HorizontalAlignment="Left" Margin="104,90,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="18" Height="29" Width="112"/>
+
+        <Button x:Name="send_command" Content="Stimulate" HorizontalAlignment="Left" Height="136" Margin="676,770,0,0" VerticalAlignment="Top" Width="230" Click="send_command_Click" FontFamily="Open Sans" FontWeight="ExtraBold" FontSize="36"/>
+
+        <Label Content="4" x:Name="intensity_value1" HorizontalAlignment="Left" Margin="60,170,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value2" HorizontalAlignment="Left" Margin="170,170,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value3" HorizontalAlignment="Left" Margin="280,170,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value4" HorizontalAlignment="Left" Margin="390,170,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value5" HorizontalAlignment="Left" Margin="60,230,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value6" HorizontalAlignment="Left" Margin="170,230,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value7" HorizontalAlignment="Left" Margin="280,230,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value8" HorizontalAlignment="Left" Margin="390,230,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value9" HorizontalAlignment="Left" Margin="60,290,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value10" HorizontalAlignment="Left" Margin="170,290,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value11" HorizontalAlignment="Left" Margin="280,290,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value12" HorizontalAlignment="Left" Margin="390,290,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value13" HorizontalAlignment="Left" Margin="60,350,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value14" HorizontalAlignment="Left" Margin="170,350,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value15" HorizontalAlignment="Left" Margin="280,350,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value16" HorizontalAlignment="Left" Margin="390,350,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value17" HorizontalAlignment="Left" Margin="170,410,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="4" x:Name="intensity_value18" HorizontalAlignment="Left" Margin="280,410,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+
+        <Ellipse x:Name="channel1_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="492,330,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel2_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="532,330,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel3_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="572,330,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel4_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="612,330,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel5_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="492,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel6_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="532,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel7_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="572,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel8_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="612,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel9_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="492,390,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel10_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="532,390,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel11_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="572,390,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel12_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="612,390,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel13_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="492,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel14_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="532,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel15_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="572,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel16_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="612,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel17_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="532,450,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+        <Ellipse x:Name="channel18_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="20" Margin="572,450,0,0" Stroke="Black" VerticalAlignment="Top" Width="20"/>
+
+        <Button x:Name="vibration_button" Content="" HorizontalAlignment="Left" Height="39" Margin="514,776,0,0" VerticalAlignment="Top" Width="118" Opacity="0"  Background="Red"  Click="vibration_button_Click"/>
+        <Button x:Name="electrode1_button" Content="" HorizontalAlignment="Left"  Height="20" Margin="492,330,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode1_button_Click"/>
+        <Button x:Name="electrode2_button" Content="" HorizontalAlignment="Left" Height="20" Margin="532,330,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode2_button_Click"/>
+        <Button x:Name="electrode3_button" Content="" HorizontalAlignment="Left" Height="20" Margin="572,330,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode3_button_Click"/>
+        <Button x:Name="electrode4_button" Content="" HorizontalAlignment="Left" Height="20" Margin="612,330,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode4_button_Click"/>
+        <Button x:Name="electrode5_button" Content="" HorizontalAlignment="Left" Height="20" Margin="492,360,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode5_button_Click"/>
+        <Button x:Name="electrode6_button" Content="" HorizontalAlignment="Left" Height="20" Margin="532,360,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode6_button_Click"/>
+        <Button x:Name="electrode7_button" Content="" HorizontalAlignment="Left" Height="20" Margin="572,360,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode7_button_Click"/>
+        <Button x:Name="electrode8_button" Content="" HorizontalAlignment="Left" Height="20" Margin="612,360,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode8_button_Click"/>
+        <Button x:Name="electrode9_button" Content="" HorizontalAlignment="Left" Height="20" Margin="492,390,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode9_button_Click"/>
+        <Button x:Name="electrode10_button" Content="" HorizontalAlignment="Left" Height="20" Margin="532,390,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode10_button_Click"/>
+        <Button x:Name="electrode11_button" Content="" HorizontalAlignment="Left" Height="20" Margin="572,390,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode11_button_Click"/>
+        <Button x:Name="electrode12_button" Content="" HorizontalAlignment="Left" Height="20" Margin="612,390,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode12_button_Click"/>
+        <Button x:Name="electrode13_button" Content="" HorizontalAlignment="Left" Height="20" Margin="492,420,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode13_button_Click"/>
+        <Button x:Name="electrode14_button" Content="" HorizontalAlignment="Left" Height="20" Margin="532,420,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode14_button_Click"/>
+        <Button x:Name="electrode15_button" Content="" HorizontalAlignment="Left" Height="20" Margin="572,420,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode15_button_Click"/>
+        <Button x:Name="electrode16_button" Content="" HorizontalAlignment="Left" Height="20" Margin="612,420,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode16_button_Click"/>
+        <Button x:Name="electrode17_button" Content="" HorizontalAlignment="Left" Height="20" Margin="532,450,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode17_button_Click"/>
+        <Button x:Name="electrode18_button" Content="" HorizontalAlignment="Left" Height="20" Margin="572,450,0,0" VerticalAlignment="Top" Width="20" Opacity="0"  Background="Red"  Click="electrode18_button_Click"/>
+
+
+        <Slider x:Name="intensity_slider1" HorizontalAlignment="Left" Height="26" Margin="30,190,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" Maximum="10" Value="4" ValueChanged="intensity_slider1_ValueChanged" TickFrequency="1"  IsSnapToTickEnabled="True"/>
+        <Slider x:Name="intensity_slider2" HorizontalAlignment="Left" Height="26" Margin="140,190,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center"  Value="4" TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider2_ValueChanged" />
+        <Slider x:Name="intensity_slider3" HorizontalAlignment="Left" Height="26" Margin="250,190,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center"  Value="4" TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider3_ValueChanged"/>
+        <Slider x:Name="intensity_slider4" HorizontalAlignment="Left" Height="26" Margin="360,190,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center"  Value="4" TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider4_ValueChanged"/>
+        <Slider x:Name="intensity_slider5" Height="26" Margin="30,250,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" HorizontalAlignment="Left"   Value="4" TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider5_ValueChanged"/>
+        <Slider x:Name="intensity_slider6" Height="26" Margin="140,250,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" HorizontalAlignment="Left"  Value="4" TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider6_ValueChanged"/>
+        <Slider x:Name="intensity_slider7" Height="26" Margin="250,250,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" HorizontalAlignment="Left"  Value="4" TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider7_ValueChanged"/>
+        <Slider x:Name="intensity_slider8" Height="26" Margin="360,250,0,0" VerticalAlignment="Top" Width="90" VerticalContentAlignment="Center" HorizontalAlignment="Left"  Value="4" TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider8_ValueChanged"/>
+        <Slider x:Name="intensity_slider9" HorizontalAlignment="Left" Height="26" Margin="30,310,0,0" VerticalAlignment="Top" Width="90"    TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider9_ValueChanged"/>
+        <Slider x:Name="intensity_slider10" HorizontalAlignment="Left" Height="26" Margin="140,310,0,0" VerticalAlignment="Top" Width="90"  TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider10_ValueChanged"/>
+        <Slider x:Name="intensity_slider11" HorizontalAlignment="Left" Height="26" Margin="250,310,0,0" VerticalAlignment="Top" Width="90"  TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider11_ValueChanged"/>
+        <Slider x:Name="intensity_slider12" HorizontalAlignment="Left" Height="26" Margin="360,310,0,0" VerticalAlignment="Top" Width="90"  TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider12_ValueChanged"/>
+        <Slider x:Name="intensity_slider13" HorizontalAlignment="Left" Height="26" Margin="30,370,0,0" VerticalAlignment="Top" Width="90"   TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider13_ValueChanged"/>
+        <Slider x:Name="intensity_slider14" HorizontalAlignment="Left" Height="26" Margin="140,370,0,0" VerticalAlignment="Top" Width="90"  TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider14_ValueChanged"/>
+        <Slider x:Name="intensity_slider15" HorizontalAlignment="Left" Height="26" Margin="250,370,0,0" VerticalAlignment="Top" Width="90"  TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider15_ValueChanged"/>
+        <Slider x:Name="intensity_slider16" HorizontalAlignment="Left" Height="26" Margin="360,370,0,0" VerticalAlignment="Top" Width="90"  TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider16_ValueChanged"/>
+        <Slider x:Name="intensity_slider17" HorizontalAlignment="Left" Height="26" Margin="140,430,0,0" VerticalAlignment="Top" Width="90"  TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider17_ValueChanged"/>
+        <Slider x:Name="intensity_slider18" HorizontalAlignment="Left" Height="26" Margin="250,430,0,0" VerticalAlignment="Top" Width="90"  TickFrequency="1" Value="4"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider18_ValueChanged"/>
+
+
+
+        <Label Content="0" x:Name="waveform_ibn_value" HorizontalAlignment="Left" Margin="926,78,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="0" x:Name="waveform_pp_value" HorizontalAlignment="Left" Margin="926,38,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="0" x:Name="waveform_ibp_value" HorizontalAlignment="Left" Margin="926,124,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+        <Label Content="0" x:Name="waveform_obn_value" HorizontalAlignment="Left" Margin="926,158,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
+
+
+        <Label Content="Pulse Period" HorizontalAlignment="Left" Margin="676,58,0,0" VerticalAlignment="Top" Height="30" Width="120" FontFamily="Open Sans" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Inner Burst Number" HorizontalAlignment="Left" Margin="676,98,0,0" VerticalAlignment="Top" Height="30" Width="180" FontFamily="Open Sans" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Inner Burst Period" HorizontalAlignment="Left" Margin="676,138,0,0" VerticalAlignment="Top" Height="30" Width="180" FontFamily="Open Sans" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Outer Burst Number Period" HorizontalAlignment="Left" Margin="676,178,0,0" VerticalAlignment="Top" Height="50" Width="180" FontFamily="Open Sans" FontSize="16" FontWeight="Bold"/>
+
+
+        <Slider x:Name="pp_slider" HorizontalAlignment="Left" Height="26" Margin="856,68,0,0" VerticalAlignment="Top" Width="150" VerticalContentAlignment="Center" Maximum="100" Value="10" ValueChanged="pp_slider_ValueChanged"  TickFrequency="1"  IsSnapToTickEnabled="True"/>
+        <Slider x:Name="ibn_slider" HorizontalAlignment="Left" Height="26" Margin="856,108,0,0" VerticalAlignment="Top" Width="150" VerticalContentAlignment="Center" Maximum="10" Value="3" ValueChanged="ibn_slider_ValueChanged"  TickFrequency="1"  IsSnapToTickEnabled="True"/>
+        <Slider x:Name="ibp_slider" HorizontalAlignment="Left" Height="26" Margin="856,148,0,0" VerticalAlignment="Top" Width="150" VerticalContentAlignment="Center" Maximum="2000" Value="150" ValueChanged="ibp_slider_ValueChanged" TickFrequency="10"  IsSnapToTickEnabled="True"/>
+        <Slider x:Name="obn_slider" HorizontalAlignment="Left" Height="26" Margin="856,188,0,0" VerticalAlignment="Top" Width="150" VerticalContentAlignment="Center" Maximum="20" Value="9" ValueChanged="obn_slider_ValueChanged" TickFrequency="1"  IsSnapToTickEnabled="True"/>
+        <Button x:Name="set_parameters" Content="Set Parameters" HorizontalAlignment="Left" Height="26" Margin="1025,188,0,0" VerticalAlignment="Top" Width="140" VerticalContentAlignment="Center" FontSize="18" FontFamily="Open Sans" Click="set_parameters_Click" />
 
 
 
 
-        <Image Margin="728,132,745,377" Source="tongue_background.png" Stretch="Fill" Opacity="0.5"/>
+        <Button x:Name="send_command_button" Content="Stimulate" HorizontalAlignment="Left" Height="80" Margin="480,600,0,0" VerticalAlignment="Top" Width="150" Click="send_command_Click_1"  FontFamily="Open Sans" FontWeight="ExtraBold" FontSize="28"/>
+        <Label x:Name="label1_Copy" Content="Intensity" HorizontalAlignment="Left" Foreground="Black" Margin="26,130,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20" FontStyle="Italic" Height="40" Width="194" FontWeight="Bold"/>
 
+        <Label x:Name="shape_direction_label" Content="Shape and Direction Patterns" HorizontalAlignment="Left" Foreground="Black" Margin="26,560,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" Height="40" Width="300"/>
 
+        <Border x:Name="left_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,610,0,0">
+            <Image x:Name="left_image_button" Width="30" Height="30" Source="/resources/left.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="left_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="right_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,610,0,0">
+            <Image x:Name="right_image_button" Width="30" Height="30" Source="/resources/right.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="right_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="up_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,610,0,0">
+            <Image x:Name="up_image_button" Width="30" Height="30" Source="/resources/up.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="up_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="down_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,610,0,0">
+            <Image x:Name="down_image_button" Width="30" Height="30" Source="/resources/down.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="down_image_button_MouseLeftButtonDown"/>
+        </Border>
 
-        <Rectangle Fill="#FFF4F4F5" Height="348" Margin="47,250,1203,0" Stroke="Black" VerticalAlignment="Top" Width="662" HorizontalAlignment="Center"/>
+        <Border x:Name="left_diagnol_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="190,610,0,0">
+            <Image x:Name="left_diagnol_image_button" Width="30" Height="30" Source="/resources/left_diagnol_down.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="left_diagnol_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="right_diagnol_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,610,0,0">
+            <Image x:Name="right_diagnol_image_button" Width="30" Height="30" Source="/resources/right_diagnol_down.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="right_diagnol_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="right_diagnol_up_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="270,610,0,0">
+            <Image x:Name="right_diagnol_up_image_button" Width="30" Height="30" Source="/resources/right_diagnol_up.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="right_diagnol_up_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="left_diagnol_up_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,650,0,0">
+            <Image x:Name="left_diagnol_up_image_button" Width="30" Height="30" Source="/resources/left_diagnol_up.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="left_diagnol_up_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="triangle_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,650,0,0">
+            <Image x:Name="triangle_image_button" Width="30" Height="30" Source="/resources/triangle.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="triangle_image_button_MouseLeftButtonDown"/>
+        </Border>
 
-        <Label x:Name="label1" Content="MicroController Status" HorizontalAlignment="Left" Foreground="Black" Margin="47,47,0,0" VerticalAlignment="Top" FontFamily="Roboto Condensed" FontSize="36" FontStyle="Italic" FontWeight="Bold" Height="55" Width="379"/>
-        <Label x:Name="label3" Content="Ports:" HorizontalAlignment="Left" Margin="47,105,0,0" Foreground="Black" VerticalAlignment="Top" Width="95" Height="34" FontFamily="Roboto Condensed Light" FontSize="24"/>
-        <ComboBox x:Name="port_names" HorizontalAlignment="Left" Margin="122,105,0,0" VerticalAlignment="Top" Width="130" Height="34" FontFamily="Roboto Condensed Light" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name="connect_button" Content="Connect" HorizontalAlignment="Left" Margin="296,107,0,0" VerticalAlignment="Top" Width="111" Height="33" FontFamily="Roboto Condensed" FontSize="24" Click="connect_button_Click" />
-        <TextBlock x:Name="status" Text="Status: " Foreground="Black" HorizontalAlignment="Left" Margin="49,156,0,0" VerticalAlignment="Top" FontFamily="Roboto Condensed Light" FontSize="24" Height="29" Width="70"/>
-        <TextBlock x:Name="status_label" Text="Disconnected"  Foreground="Black" HorizontalAlignment="Left" Margin="122,156,0,0" VerticalAlignment="Top" FontFamily="Roboto Condensed" FontSize="24" Height="29" Width="130"/>
+        <Border x:Name="hexagon_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="190,650,0,0">
+            <Image x:Name="hexagon_image_button" Width="30" Height="30" Source="/resources/hexagon.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="hexagon_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="zigzag_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,650,0,0">
+            <Image x:Name="zigzag_image_button" Width="30" Height="30" Source="/resources/zigzag.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="zigzag_image_button_MouseLeftButtonDown"/>
+        </Border>
 
-        <Button Content="Stimulate" HorizontalAlignment="Left" Height="136" Margin="777,850,0,0" VerticalAlignment="Top" Width="230" Click="Button_Click" FontFamily="Open Sans" FontWeight="ExtraBold" FontSize="36"/>
-        <Slider x:Name="intensity_slider1" HorizontalAlignment="Left" Height="26" Margin="60,356,0,0" VerticalAlignment="Top" Width="116" VerticalContentAlignment="Center" Maximum="10" Value="0" ValueChanged="intensity_slider1_ValueChanged" TickFrequency="1"  IsSnapToTickEnabled="True"/>
-        <Slider x:Name="intensity_slider2" HorizontalAlignment="Left" Height="26" Margin="210,356,0,0" VerticalAlignment="Top" Width="116" VerticalContentAlignment="Center"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider2_ValueChanged" />
-        <Slider x:Name="intensity_slider3" HorizontalAlignment="Left" Height="26" Margin="360,356,0,0" VerticalAlignment="Top" Width="118" VerticalContentAlignment="Center"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider3_ValueChanged"/>
-        <Slider x:Name="intensity_slider4" HorizontalAlignment="Left" Height="26" Margin="510,356,0,0" VerticalAlignment="Top" Width="116" VerticalContentAlignment="Center"  TickFrequency="1"  IsSnapToTickEnabled="True"  ValueChanged="intensity_slider4_ValueChanged"/>
-        <Slider x:Name="intensity_slider5" Height="26" Margin="60,408,0,615" VerticalAlignment="Center" Width="117" VerticalContentAlignment="Center" HorizontalAlignment="Left"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider5_ValueChanged"/>
-        <Slider x:Name="intensity_slider6" Height="26" Margin="210,408,0,615" VerticalAlignment="Center" Width="116" VerticalContentAlignment="Center" HorizontalAlignment="Left"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider6_ValueChanged"/>
-        <Slider x:Name="intensity_slider7" Height="26" Margin="360,408,0,615" VerticalAlignment="Center" Width="116" VerticalContentAlignment="Center" HorizontalAlignment="Left"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider7_ValueChanged"/>
-        <Slider x:Name="intensity_slider8" Height="26" Margin="510,408,0,615" VerticalAlignment="Center" Width="116" VerticalContentAlignment="Center" HorizontalAlignment="Left"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider8_ValueChanged"/>
-        <Slider x:Name="intensity_slider9" HorizontalAlignment="Left" Height="26" Margin="60,456,0,0" VerticalAlignment="Top" Width="117"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider9_ValueChanged"/>
-        <Slider x:Name="intensity_slider10" HorizontalAlignment="Left" Height="26" Margin="210,456,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider10_ValueChanged"/>
-        <Slider x:Name="intensity_slider11" HorizontalAlignment="Left" Height="26" Margin="360,456,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider11_ValueChanged"/>
-        <Slider x:Name="intensity_slider12" HorizontalAlignment="Left" Height="26" Margin="510,456,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider12_ValueChanged"/>
-        <Slider x:Name="intensity_slider13" HorizontalAlignment="Left" Height="26" Margin="60,506,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider13_ValueChanged"/>
-        <Slider x:Name="intensity_slider14" HorizontalAlignment="Left" Height="26" Margin="210,506,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider14_ValueChanged"/>
-        <Slider x:Name="intensity_slider15" HorizontalAlignment="Left" Height="26" Margin="360,506,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider15_ValueChanged"/>
-        <Slider x:Name="intensity_slider16" HorizontalAlignment="Left" Height="26" Margin="510,506,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider16_ValueChanged"/>
-        <Slider x:Name="intensity_slider17" HorizontalAlignment="Left" Height="26" Margin="210,556,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider17_ValueChanged"/>
-        <Slider x:Name="intensity_slider18" HorizontalAlignment="Left" Height="26" Margin="360,556,0,0" VerticalAlignment="Top" Width="116"  TickFrequency="1"  IsSnapToTickEnabled="True" ValueChanged="intensity_slider18_ValueChanged"/>
+        <Border x:Name="square_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,650,0,0">
+            <Image x:Name="square_image_button" Width="30" Height="30" Source="/resources/square.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="square_image_button_MouseLeftButtonDown"/>
+        </Border>
 
+        <Border x:Name="waterfall_up_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="230,650,0,0">
+            <Image x:Name="waterfall_up_image_button" Width="30" Height="30" Source="/resources/waterfall_up.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="waterfall_up_image_button_MouseLeftButtonDown"/>
+        </Border>
 
-        <Ellipse x:Name="channel1_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="836,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel2_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="896,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel3_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="956,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel4_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="1016,360,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel5_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="836,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel6_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="896,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel7_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="956,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel8_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="1016,420,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel9_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="836,480,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel10_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="896,480,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel11_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="956,480,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel12_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="1016,480,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel13_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="836,540,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel14_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="896,540,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel15_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="956,540,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel16_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="1016,540,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel17_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="896,600,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
-        <Ellipse x:Name="channel18_ellipse" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="40" Margin="956,600,0,0" Stroke="Black" VerticalAlignment="Top" Width="40"/>
+        <Label x:Name="label_stimuli_parameters" Content="Stimuli Parameters" HorizontalAlignment="Left" Foreground="Black" Margin="676,10,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20" FontStyle="Italic" Height="40" Width="208" FontWeight="Bold"/>
+        <Border x:Name="waterfall_down_image_border" Height="30" Width="30" BorderBrush="SaddleBrown" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="270,650,0,0">
+            <Image x:Name="waterfall_down_image_button" Width="30" Height="30" Source="/resources/waterfall_down.png" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" MouseLeftButtonDown="waterfall_down_image_button_MouseLeftButtonDown"/>
+        </Border>
+        <Button x:Name="save_button" Click="save_button_Click" Content="Save"  Width="140" Height="33" FontSize="18" FontFamily="Open Sans" HorizontalAlignment="Left" Margin="860,300,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEditor" Margin="680,248,35,422" FontFamily="Open Sans" IsReadOnly="True"/>
+        <Button x:Name="btnOpenFile" Click="btnOpenFile_Click" Width="140" Height="33" FontSize="18" FontFamily="Open Sans" Content="Upload" Margin="680,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="sensation_presets_label" Content="Sensation Patterns" HorizontalAlignment="Left" Foreground="Black" Margin="680,372,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" Height="40" Width="300"/>
 
-        <Label Content="INTENSITY" HorizontalAlignment="Center" Margin="240,248,1452,0" VerticalAlignment="Top" Height="78" Width="220" FontFamily="Adobe Gothic Std B" FontSize="40" HorizontalContentAlignment="Center"/>
-        <Rectangle Fill="#FFF4F4F5" Height="369" Margin="47,670,1203,0" Stroke="Black" VerticalAlignment="Top" Width="662" HorizontalAlignment="Center"/>
-        <Label Content="DIRECTIONAL PRESETS" HorizontalAlignment="Center" Margin="140,670,1333,0" VerticalAlignment="Top" Height="78" Width="439" FontFamily="Adobe Gothic Std B" FontSize="40" HorizontalContentAlignment="Center"/>
-        <Image HorizontalAlignment="Left" Height="82" Margin="111,850,0,0" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2"/>
-        <Rectangle Fill="#FFF4F4F5" Height="369" Margin="1182,670,43,0" Stroke="Black" VerticalAlignment="Top" Width="687" HorizontalAlignment="Center"/>
-        <Label Content="SENSATION PRESETS" HorizontalAlignment="Left" Margin="1322,670,0,0" VerticalAlignment="Top" Height="78" Width="439" FontFamily="Open Sans" FontSize="40" HorizontalContentAlignment="Center" FontWeight="Bold"/>
-        <Rectangle Fill="#FFF4F4F5" Height="407" Margin="1182,248,43,0" Stroke="Black" VerticalAlignment="Top" Width="687" HorizontalAlignment="Center"/>
-        <Label Content="WAVEFORM PARAMETERS" HorizontalAlignment="Left" Margin="1232,250,0,0" VerticalAlignment="Top" Height="78" Width="584" FontFamily="Adobe Gothic Std B" FontSize="40" HorizontalContentAlignment="Center"/>
-        <Image x:Name="left_icon" Margin="251,746,1609,249" Source="left.png" Stretch="Fill" VerticalAlignment="Center" Height="54" MouseLeftButtonDown="left_icon_MouseLeftButtonDown"/>
-        <Image Margin="310,740,1549,257" Source="right.png" Stretch="Fill" VerticalAlignment="Center" Height="52" />
-        <Image Margin="140,739,1719,257" Source="up.png" Stretch="Fill" RenderTransformOrigin="0.318,0.486"/>
-        <Button x:Name="up_pattern_button" Content="" HorizontalAlignment="Left" Height="39" Margin="145,750,0,0" VerticalAlignment="Top" Width="41" Opacity="0" Click="up_pattern_button_Click" Background="Red" />
-        <Image Margin="190,747,1670,249" Source="down.png" Stretch="Fill" RenderTransformOrigin="0.465,0.613"/>
-        <Button x:Name="down_pattern_button" Content="" HorizontalAlignment="Left" Height="39" Margin="145,750,0,0" VerticalAlignment="Top" Width="41" Opacity="0" Click="down_pattern_button_Click" Background="Red" />
-        <Label Content="Vibration" HorizontalAlignment="Left" Margin="1200,780,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Pulsating" HorizontalAlignment="Left" Margin="1330,780,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Itching" HorizontalAlignment="Left" Margin="1460,780,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Strong" HorizontalAlignment="Left" Margin="1590,780,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Prickling" HorizontalAlignment="Left" Margin="1720,780,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Gentle" HorizontalAlignment="Left" Margin="1200,830,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Faint" HorizontalAlignment="Left" Margin="1330,830,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Tickling" HorizontalAlignment="Left" Margin="1460,830,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Localized" HorizontalAlignment="Left" Margin="1590,830,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Diffuse" HorizontalAlignment="Left" Margin="1720,830,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Soothing" HorizontalAlignment="Left" Margin="1200,880,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Twitching" HorizontalAlignment="Left" Margin="1330,880,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Calming" HorizontalAlignment="Left" Margin="1460,880,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Squeezing" HorizontalAlignment="Left" Margin="1590,880,0,0" VerticalAlignment="Top" Height="49" Width="129" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Energizing" HorizontalAlignment="Left" Margin="1720,880,0,0" VerticalAlignment="Top" Height="49" Width="136" FontFamily="Open Sans" FontSize="24"/>
+        <Label x:Name="load_save_label" Content="Load/Save Stimuli" HorizontalAlignment="Left" Foreground="Black" Margin="680,210,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" Height="40" Width="300"/>
 
-        <Label Content="Tactile Sensations" HorizontalAlignment="Left" Margin="1200,740,0,0" VerticalAlignment="Top" Height="49" Width="231" FontFamily="Open Sans" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Taste Sensations" HorizontalAlignment="Left" Margin="1200,934,0,0" VerticalAlignment="Top" Height="49" Width="231" FontFamily="Open Sans" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Bitter" HorizontalAlignment="Left" Margin="1460,974,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Sour" HorizontalAlignment="Left" Margin="1200,974,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="Salty" HorizontalAlignment="Left" Margin="1330,974,0,0" VerticalAlignment="Top" Height="49" Width="120" FontFamily="Open Sans" FontSize="24"/>
-        <Label Content="0" x:Name="intensity_value1" HorizontalAlignment="Left" Margin="100,336,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value2" HorizontalAlignment="Left" Margin="250,336,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value3" HorizontalAlignment="Left" Margin="400,336,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value4" HorizontalAlignment="Left" Margin="550,336,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value5" HorizontalAlignment="Left" Margin="100,386,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value6" HorizontalAlignment="Left" Margin="250,386,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value7" HorizontalAlignment="Left" Margin="400,386,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value8" HorizontalAlignment="Left" Margin="550,386,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value9" HorizontalAlignment="Left" Margin="100,436,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value10" HorizontalAlignment="Left" Margin="250,436,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value11" HorizontalAlignment="Left" Margin="400,436,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value12" HorizontalAlignment="Left" Margin="550,436,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value13" HorizontalAlignment="Left" Margin="100,486,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value14" HorizontalAlignment="Left" Margin="250,486,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value15" HorizontalAlignment="Left" Margin="400,486,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value16" HorizontalAlignment="Left" Margin="550,486,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value17" HorizontalAlignment="Left" Margin="250,536,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="intensity_value18" HorizontalAlignment="Left" Margin="400,536,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Image Margin="364,747,1496,250" Source="left_diagnol_down.png" Stretch="Fill"/>
-        <Image Margin="423,743,1436,254" Source="left_diagnol_up.png" Stretch="Fill" RenderTransformOrigin="-0.005,-0.538"/>
-        <Image Margin="528,739,1331,257" Source="right_diagnol_up.png" Stretch="Fill"/>
-        <Image Margin="470,741,1390,255" Source="right_diagnol_down.png" Stretch="Fill" RenderTransformOrigin="0.493,0.718"/>
-        <Rectangle HorizontalAlignment="Left" Height="39" Margin="150,811,0,0" VerticalAlignment="Top" Width="41" Stroke="Black" StrokeThickness="4"/>
-        <Label Content="Pulse Width" HorizontalAlignment="Left" Margin="1200,356,0,0" VerticalAlignment="Top" Height="49" Width="231" FontFamily="Open Sans" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Pulse Period" HorizontalAlignment="Left" Margin="1200,406,0,0" VerticalAlignment="Top" Height="49" Width="231" FontFamily="Open Sans" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Inner Burst Number" HorizontalAlignment="Left" Margin="1200,456,0,0" VerticalAlignment="Top" Height="49" Width="250" FontFamily="Open Sans" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Inner Burst Period" HorizontalAlignment="Left" Margin="1200,506,0,0" VerticalAlignment="Top" Height="49" Width="264" FontFamily="Open Sans" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Outer Burst Number Period" HorizontalAlignment="Left" Margin="1200,556,0,0" VerticalAlignment="Top" Height="49" Width="264" FontFamily="Open Sans" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Inter Channel Period" HorizontalAlignment="Left" Margin="1200,606,0,0" VerticalAlignment="Top" Height="49" Width="264" FontFamily="Open Sans" FontSize="24" FontWeight="Bold"/>
-        <Slider x:Name="pw_slider" HorizontalAlignment="Left" Height="26" Margin="1572,366,0,0" VerticalAlignment="Top" Width="244" VerticalContentAlignment="Center" Maximum="10" Value="0" ValueChanged="pw_slider_ValueChanged"  TickFrequency="1"  IsSnapToTickEnabled="True"/>
-        <Slider x:Name="pp_slider" HorizontalAlignment="Left" Height="26" Margin="1572,414,0,0" VerticalAlignment="Top" Width="244" VerticalContentAlignment="Center" Maximum="100" Value="0" ValueChanged="pp_slider_ValueChanged"  TickFrequency="1"  IsSnapToTickEnabled="True"/>
-        <Slider x:Name="ibn_slider" HorizontalAlignment="Left" Height="26" Margin="1572,467,0,0" VerticalAlignment="Top" Width="244" VerticalContentAlignment="Center" Maximum="10" Value="0" ValueChanged="ibn_slider_ValueChanged"  TickFrequency="1"  IsSnapToTickEnabled="True"/>
-        <Slider x:Name="ibp_slider" HorizontalAlignment="Left" Height="26" Margin="1572,518,0,0" VerticalAlignment="Top" Width="244" VerticalContentAlignment="Center" Maximum="2000" Value="0" ValueChanged="ibp_slider_ValueChanged" TickFrequency="10"  IsSnapToTickEnabled="True"/>
-        <Slider x:Name="obn_slider" HorizontalAlignment="Left" Height="26" Margin="1572,568,0,0" VerticalAlignment="Top" Width="244" VerticalContentAlignment="Center" Maximum="20" Value="0" ValueChanged="obn_slider_ValueChanged" TickFrequency="1"  IsSnapToTickEnabled="True"/>
-        <Slider x:Name="icp_slider" HorizontalAlignment="Left" Height="26" Margin="1572,618,0,0" VerticalAlignment="Top" Width="244" VerticalContentAlignment="Center" Maximum="1000" Value="0" ValueChanged="icp_slider_ValueChanged" TickFrequency="10"  IsSnapToTickEnabled="True"/>
-        <Button Content="Save Stimuli" HorizontalAlignment="Left" Height="41" Margin="1346,156,0,0" VerticalAlignment="Top" Width="234" FontSize="24" FontFamily="Open Sans" />
+        <Label x:Name="vibration" Content="Vibration" HorizontalAlignment="Left" Margin="680,412,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="vibration_MouseLeftButtonDown" Background="White"/>
+        <Label x:Name="pulsating" Content="Pulsating" HorizontalAlignment="Left" Margin="780,412,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="pulsating_MouseLeftButtonDown"/>
+        <Label x:Name="itching" Content="Itching" HorizontalAlignment="Left" Margin="880,412,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="itching_MouseLeftButtonDown"/>
+        <Label x:Name="strong" Content="Strong" HorizontalAlignment="Left" Margin="980,412,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="strong_MouseLeftButtonDown"/>
+        <Label x:Name="prickling"  Content="Prickling" HorizontalAlignment="Left" Margin="1080,412,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="prickling_MouseLeftButtonDown"/>
+        <Label x:Name="gentle" Content="Gentle" HorizontalAlignment="Left" Margin="680,452,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="gentle_MouseLeftButtonDown"/>
+        <Label x:Name="faint" Content="Faint" HorizontalAlignment="Left" Margin="780,452,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="faint_MouseLeftButtonDown"/>
+        <Label x:Name="tickling" Content="Tickling" HorizontalAlignment="Left" Margin="880,452,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="tickling_MouseLeftButtonDown"/>
+        <Label x:Name="localized" Content="Localized" HorizontalAlignment="Left" Margin="980,452,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="localized_MouseLeftButtonDown"/>
+        <Label x:Name="diffuse" Content="Diffuse" HorizontalAlignment="Left" Margin="1080,452,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="diffuse_MouseLeftButtonDown"/>
+        <Label x:Name="soothing" Content="Soothing" HorizontalAlignment="Left" Margin="680,492,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="soothing_MouseLeftButtonDown"/>
+        <Label x:Name="twitching"  Content="Twitching" HorizontalAlignment="Left" Margin="780,492,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="twitching_MouseLeftButtonDown"/>
+        <Label x:Name="calming"  Content="Calming" HorizontalAlignment="Left" Margin="880,492,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="calming_MouseLeftButtonDown"/>
+        <Label x:Name="squeezing"  Content="Squeezing" HorizontalAlignment="Left" Margin="980,492,0,0" VerticalAlignment="Top" Height="40" Width="105" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="squeezing_MouseLeftButtonDown"/>
+        <Label x:Name="energizing"  Content="Energizing" HorizontalAlignment="Left" Margin="1080,492,0,0" VerticalAlignment="Top" Height="40" Width="106" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="energizing_MouseLeftButtonDown"/>
 
-        <DockPanel Margin="1184,149,594,826">
-            <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
-                <Button x:Name="btnOpenFile" Click="btnOpenFile_Click" Width="128" Height="42" FontSize="24" FontFamily="Open Sans" Content="Upload"/>
-            </WrapPanel>
-            <TextBox Name="txtEditor" />
-        </DockPanel>
-        <Label Content="Customize" HorizontalAlignment="Left" Margin="60,860,0,0" VerticalAlignment="Top" Height="46" Width="149" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315" FontWeight="Bold"/>
-        <Label Content="Ch 1" HorizontalAlignment="Left" Margin="60,900,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 2" HorizontalAlignment="Left" Margin="60,940,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 3" HorizontalAlignment="Left" Margin="60,980,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315" VerticalContentAlignment="Center"/>
+        <Label x:Name="taste_presets_label" Content="Taste Presets" HorizontalAlignment="Left" Foreground="Black" Margin="680,532,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" Height="40" Width="300"/>
+        <Label x:Name="salty"   Content="Salty" HorizontalAlignment="Left" Margin="880,572,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="salty_MouseLeftButtonDown"/>
+        <Label x:Name="sour"    Content="Sour" HorizontalAlignment="Left" Margin="980,572,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="sour_MouseLeftButtonDown"/>
+        <Label x:Name="bitter"  Content="Bitter" HorizontalAlignment="Left" Margin="1080,572,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="bitter_MouseLeftButtonDown"/>
+        <Label x:Name="umami"   Content="Umami" HorizontalAlignment="Left" Margin="780,572,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="umami_MouseLeftButtonDown"/>
+        <Label x:Name="sweet"   Content="Sweet" HorizontalAlignment="Left" Margin="680,572,0,0" VerticalAlignment="Top" Height="40" Width="100" FontFamily="Open Sans" FontSize="20" MouseLeftButtonDown="sweet_MouseLeftButtonDown"/>
 
-        <TextBox x:Name="direction_ch1" HorizontalAlignment="Left" Height="34" Margin="125,900,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch2" HorizontalAlignment="Left" Height="34" Margin="125,940,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch3" HorizontalAlignment="Left" Height="34" Margin="125,980,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-
-
-        <Label Content="Ch 4" HorizontalAlignment="Left" Margin="160,900,0,0" VerticalAlignment="Top" Height="46" Width="62" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 5" HorizontalAlignment="Left" Margin="160,940,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 6" HorizontalAlignment="Left" Margin="160,980,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="direction_ch4" HorizontalAlignment="Left" Height="34" Margin="225,900,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch5" HorizontalAlignment="Left" Height="34" Margin="225,940,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch6" HorizontalAlignment="Left" Height="34" Margin="225,980,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-
-        <Label Content="Ch 7" HorizontalAlignment="Left" Margin="260,900,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 8" HorizontalAlignment="Left" Margin="260,940,0,0" VerticalAlignment="Top" Height="46" Width="58" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 9" HorizontalAlignment="Left" Margin="260,980,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="direction_ch7" HorizontalAlignment="Left" Height="34" Margin="325,900,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch8" HorizontalAlignment="Left" Height="34" Margin="325,940,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch9" HorizontalAlignment="Left" Height="34" Margin="325,980,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top" Width="28" FontSize="20"/>
-
-        <Label Content="Ch 10" HorizontalAlignment="Left" Margin="370,900,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 11" HorizontalAlignment="Left" Margin="370,940,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 12" HorizontalAlignment="Left" Margin="370,980,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <TextBox x:Name="direction_ch10" HorizontalAlignment="Left" Height="34" Margin="445,900,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch11" HorizontalAlignment="Left" Height="34" Margin="445,940,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch12" HorizontalAlignment="Left" Height="34" Margin="445,980,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-
-        <Label Content="Ch 13" HorizontalAlignment="Left" Margin="480,900,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 14" HorizontalAlignment="Left" Margin="480,940,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 15" HorizontalAlignment="Left" Margin="480,980,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="direction_ch13" HorizontalAlignment="Left" Height="34" Margin="555,900,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch14" HorizontalAlignment="Left" Height="34" Margin="555,940,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch15" HorizontalAlignment="Left" Height="34" Margin="555,980,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-
-        <Label Content="Ch 16" HorizontalAlignment="Left" Margin="590,900,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 17" HorizontalAlignment="Left" Margin="590,940,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315"/>
-        <Label Content="Ch 18" HorizontalAlignment="Left" Margin="590,980,0,0" VerticalAlignment="Top" Height="46" Width="77" FontSize="24" FontFamily="Open Sans" RenderTransformOrigin="0.508,0.315" VerticalContentAlignment="Center"/>
-
-        <TextBox x:Name="direction_ch16" HorizontalAlignment="Left" Height="34" Margin="665,900,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch17" HorizontalAlignment="Left" Height="34" Margin="665,940,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <TextBox x:Name="direction_ch18" HorizontalAlignment="Left" Height="34" Margin="665,980,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="28" FontSize="20"/>
-        <Image Margin="207,804,1655,194" Source="hexagon.png" Stretch="Fill"/>
-        <Image Margin="280,800,1575,195" Source="triangle.png" Stretch="Fill"/>
-        <Image Margin="348,804,1482,195" Source="waterfall_down.png" Stretch="Fill"/>
-        <Image Margin="441,804,1394,197" Source="waterfall_up.png" Stretch="Fill"/>
-        <Image Margin="532,804,1329,197" Source="zigzag.png" Stretch="Fill"/>
-        <Button x:Name="square_pattern_button" Content="" HorizontalAlignment="Left" Height="39" Margin="150,811,0,0" VerticalAlignment="Top" Width="41" Opacity="0" Click="square_pattern_click" Background="Red" />
-        <Label Content="0" x:Name="waveform_ibn_value" HorizontalAlignment="Left" Margin="1700,440,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="waveform_pw_value" HorizontalAlignment="Left" Margin="1700,334,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="waveform_pp_value" HorizontalAlignment="Left" Margin="1700,382,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="waveform_ibp_value" HorizontalAlignment="Left" Margin="1700,488,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="waveform_obn_value" HorizontalAlignment="Left" Margin="1700,544,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-        <Label Content="0" x:Name="waveform_icp_value" HorizontalAlignment="Left" Margin="1700,600,0,0" VerticalAlignment="Top" FontFamily="Open Sans" FontSize="16"/>
-
-        <Button x:Name="vibration_button" Content="" HorizontalAlignment="Left" Height="39" Margin="1198,782,0,0" VerticalAlignment="Top" Width="118" Opacity="0"  Background="Red"  Click="vibration_button_Click"/>
-        <Button x:Name="electrode1_button" Content="" HorizontalAlignment="Left" Height="39" Margin="836,360,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode1_button_Click"/>
-        <Button x:Name="electrode2_button" Content="" HorizontalAlignment="Left" Height="39" Margin="896,360,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode2_button_Click"/>
-        <Button x:Name="electrode3_button" Content="" HorizontalAlignment="Left" Height="39" Margin="956,360,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode3_button_Click"/>
-        <Button x:Name="electrode4_button" Content="" HorizontalAlignment="Left" Height="39" Margin="1016,360,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode4_button_Click"/>
-        <Button x:Name="electrode5_button" Content="" HorizontalAlignment="Left" Height="39" Margin="836,420,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode5_button_Click"/>
-        <Button x:Name="electrode6_button" Content="" HorizontalAlignment="Left" Height="39" Margin="896,420,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode6_button_Click"/>
-        <Button x:Name="electrode7_button" Content="" HorizontalAlignment="Left" Height="39" Margin="956,420,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode7_button_Click"/>
-        <Button x:Name="electrode8_button" Content="" HorizontalAlignment="Left" Height="39" Margin="1016,420,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode8_button_Click"/>
-        <Button x:Name="electrode9_button" Content="" HorizontalAlignment="Left" Height="39" Margin="836,480,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode9_button_Click"/>
-        <Button x:Name="electrode10_button" Content="" HorizontalAlignment="Left" Height="39" Margin="896,480,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode10_button_Click"/>
-        <Button x:Name="electrode11_button" Content="" HorizontalAlignment="Left" Height="39" Margin="956,480,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode11_button_Click"/>
-        <Button x:Name="electrode12_button" Content="" HorizontalAlignment="Left" Height="39" Margin="1016,480,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode12_button_Click"/>
-        <Button x:Name="electrode13_button" Content="" HorizontalAlignment="Left" Height="39" Margin="836,540,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode13_button_Click"/>
-        <Button x:Name="electrode14_button" Content="" HorizontalAlignment="Left" Height="39" Margin="896,540,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode14_button_Click"/>
-        <Button x:Name="electrode15_button" Content="" HorizontalAlignment="Left" Height="39" Margin="956,540,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode15_button_Click"/>
-        <Button x:Name="electrode16_button" Content="" HorizontalAlignment="Left" Height="39" Margin="1016,540,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode16_button_Click"/>
-        <Button x:Name="electrode17_button" Content="" HorizontalAlignment="Left" Height="39" Margin="896,600,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode17_button_Click"/>
-        <Button x:Name="electrode18_button" Content="" HorizontalAlignment="Left" Height="39" Margin="956,600,0,0" VerticalAlignment="Top" Width="40" Opacity="0"  Background="Red"  Click="electrode18_button_Click"/>
-
-
-
+        <Label x:Name="tacttongue_evaluation_stimuli_label" Content="TactTongue Stimuli" HorizontalAlignment="Left" Foreground="Black" Margin="680,610,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20" FontWeight="Bold" Height="40" Width="300"/>
+        <ComboBox x:Name="tacttongue_stimuli" HorizontalAlignment="Left" Margin="900,615,0,0" VerticalAlignment="Top" Width="120" Height="40" FontFamily="Open Sans" FontSize="18" FontWeight="Bold" SelectionChanged="tacttongue_stimuli_SelectionChanged"/>
+        <Button Content="Set Adaptive Thresholds" HorizontalAlignment="Left" Margin="35,500,0,0" VerticalAlignment="Top" Height="28" Width="210" FontSize="18" FontFamily="Open Sans" Click="Button_Click"/>
+        <CheckBox x:Name="select_all_electrodes_checkbox" Content="Select All Electrodes" HorizontalAlignment="Left" Margin="270,500,0,0" VerticalAlignment="Top" Height="28" Width="200" FontSize="18" FontFamily="Open Sans" Checked="select_all_electrodes_checkbox_Checked"/>
 
 
 

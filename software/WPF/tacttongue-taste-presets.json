@@ -1,0 +1,222 @@
+[
+  {
+    "stimulli_name": "Vibration",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "PP":  5,
+    "Pp":  9,
+    "IBN": 9,
+    "IBP": 100,
+    "OBN": 9,
+   
+  },
+  {
+    "stimulli_name": "Pulsating",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  10,
+    "Pp":  7,
+    "IBN": 9,
+    "IBP": 999,
+    "OBN": 2,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Itching",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "PP":  10,
+    "Pp":  5,
+    "IBN": 9,
+    "IBP": 650,
+    "OBN": 3,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Strong",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  5,
+    "Pp":  4,
+    "IBN": 9,
+    "IBP": 50,
+    "OBN": 20,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Prickling",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  10,
+    "Pp":  5,
+    "IBN": 9,
+    "IBP": 650,
+    "OBN": 3,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Gentle",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  20,
+    "Pp":  8,
+    "IBN": 5,
+    "IBP": 900,
+    "OBN": 2,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Faint",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  20,
+    "Pp":  4,
+    "IBN": 5,
+    "IBP": 900,
+    "OBN": 2,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Tickling",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  10,
+    "Pp":  9,
+    "IBN": 9,
+    "IBP": 650,
+    "OBN": 3,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Localized",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  20,
+    "Pp":  9,
+    "IBN": 8,
+    "IBP": 900,
+    "OBN": 2,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Diffuse",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  20,
+    "Pp": 9,
+    "IBN": 5,
+    "IBP": 900,
+    "OBN": 2,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Soothing",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  100,
+    "Pp":  9,
+    "IBN": 9,
+    "IBP": 995,
+    "OBN": 2,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Twitching",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  20,
+    "Pp":  7,
+    "IBN": 5,
+    "IBP": 900,
+    "OBN": 2,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Calming",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  5,
+    "Pp":  4,
+    "IBN": 4,
+    "IBP": 25,
+    "OBN": 20,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Squeezing",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  10,
+    "Pp":  9,
+    "IBN": 9,
+    "IBP": 400,
+    "OBN": 4,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Energizing",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  5,
+    "Pp":  4,
+    "IBN": 4,
+    "IBP": 25,
+    "OBN": 20,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Sweet",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  100,
+    "Pp":  9,
+    "IBN": 9,
+    "IBP": 995,
+    "OBN": 2,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Umami",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  10,
+    "Pp":  3,
+    "IBN": 9,
+    "IBP": 395,
+    "OBN": 5,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Salty",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  7,
+    "Pp":  3,
+    "IBN": 7,
+    "IBP": 50,
+    "OBN": 19,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Sour",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  5,
+    "Pp":  4,
+    "IBN": 9,
+    "IBP": 50,
+    "OBN": 20,
+    "direction_preset": null,
+    "taste_preset": null
+  },
+  {
+    "stimulli_name": "Bitter",
+    "ele": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "pp":  10,
+    "Pp":  9,
+    "IBN": 9,
+    "IBP": 395,
+    "OBN": 5,
+    "direction_preset": null,
+    "taste_preset": null
+  }
+
+]
