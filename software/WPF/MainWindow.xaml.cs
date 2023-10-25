@@ -36,7 +36,7 @@ namespace TactTongue
         public string stimulli_name;
         public int[] ele_array = new int[NUM_ELECTRODES];
         public int PP;
-        public int[] Pp;
+        public int Pp;
         public int IBN;
         public int IBP;
         public int OBN;
@@ -194,7 +194,7 @@ namespace TactTongue
         }
         public void load_tacttongue_stimuli()
         {
-            using (StreamReader r = new StreamReader("tactongue-stimuli.json"))
+            using (StreamReader r = new StreamReader("../../../tactongue-stimuli.json"))
             {
                 string json = r.ReadToEnd();
 
@@ -675,7 +675,7 @@ namespace TactTongue
             if( (intensity_slider1 != null) && (ibp_slider != null) && (ibn_slider != null) && (obn_slider != null))
             {
                 StimuliParameters stimuliParameters = new StimuliParameters();
-                stimuliParameters.message_type = 0;
+                stimuliParameters.msg_type = 0;
                 stimuliParameters.PP = (int)pp_slider.Value;
                 stimuliParameters.Pp = (int)intensity_slider1.Value;
                 stimuliParameters.IBP = (int)ibp_slider.Value;
@@ -1047,7 +1047,7 @@ namespace TactTongue
 
         public class StimuliParameters
         {
-            public int message_type { get; set; }
+            public int msg_type { get; set; }
             public int PP { get; set; }
 
             public int Pp { get; set; }
@@ -1057,7 +1057,7 @@ namespace TactTongue
         }
         public class IntensitySliderParamters
         {
-            public int message_type { get; set; }
+            public int msg_type { get; set; }
             public int[] Pp { get; set; }
         }
 
@@ -1065,13 +1065,13 @@ namespace TactTongue
         public class ElectrodeParameters
         {
             public int[] ele { get; set; }
-            public int message_type { get; set; }
+            public int msg_type { get; set; }
         }
 
         public class DirectionCommand
         {
             public int direction_command { get; set; }
-            public int message_type { get; set; }
+            public int msg_type { get; set; }
         }
 
 
@@ -1098,10 +1098,10 @@ namespace TactTongue
         {
             ElectrodeParameters electrodeParameters = new ElectrodeParameters();
             electrodeParameters.ele = getActiveElectrodeArray();
-            electrodeParameters.message_type = 1;
+            electrodeParameters.msg_type = 1;
 
             StimuliParameters stimuliParameters = new StimuliParameters();
-            stimuliParameters.message_type = 0;
+            stimuliParameters.msg_type = 0;
             stimuliParameters.OBN = (int)obn_slider.Value;
             stimuliParameters.IBN = (int)ibn_slider.Value;
             stimuliParameters.IBP = (int)ibp_slider.Value;
@@ -1377,7 +1377,7 @@ namespace TactTongue
                 System.Diagnostics.Debug.WriteLine(getArrayString(getActiveElectrodeArray()));
 
                 DirectionCommand directionCommand = new DirectionCommand();
-                directionCommand.message_type = 3;
+                directionCommand.msg_type = 3;
                 directionCommand.direction_command = 0;
 
                 string stimuli_parameters_command = JsonConvert.SerializeObject(directionCommand);
@@ -1950,7 +1950,7 @@ namespace TactTongue
             {
                 ele_array = getActiveElectrodeArray(),
                 PP = getPulsePeriodValues()[0],
-                Pp = getIntensityValues(),
+                Pp = getIntensityValues()[0],
                 IBN = getIBNValues()[0],
                 IBP = getIBPValues()[0],
                 OBN = getOBNValues()[0],
@@ -2421,26 +2421,26 @@ namespace TactTongue
                 render_default_presets();
             }
         }
-        public void updatePWSliders(int[] value)
+        public void updatePWSliders(int value)
         {
-            intensity_slider1.Value = value[0];
-            intensity_slider2.Value = value[1];
-            intensity_slider3.Value = value[2];
-            intensity_slider4.Value = value[3];
-            intensity_slider5.Value = value[4];
-            intensity_slider6.Value = value[5];
-            intensity_slider7.Value = value[6];
-            intensity_slider8.Value = value[7];
-            intensity_slider9.Value = value[8];
-            intensity_slider10.Value = value[9];
-            intensity_slider11.Value = value[10];
-            intensity_slider12.Value = value[11];
-            intensity_slider13.Value = value[12];
-            intensity_slider14.Value = value[13];
-            intensity_slider15.Value = value[14];
-            intensity_slider16.Value = value[15];
-            intensity_slider17.Value = value[16];
-            intensity_slider18.Value = value[17];
+            intensity_slider1.Value = value;
+            intensity_slider2.Value = value;
+            intensity_slider3.Value = value;
+            intensity_slider4.Value = value;
+            intensity_slider5.Value = value;
+            intensity_slider6.Value = value;
+            intensity_slider7.Value = value;
+            intensity_slider8.Value = value;
+            intensity_slider9.Value = value;
+            intensity_slider10.Value = value;
+            intensity_slider11.Value = value;
+            intensity_slider12.Value = value;
+            intensity_slider13.Value = value;
+            intensity_slider14.Value = value;
+            intensity_slider15.Value = value;
+            intensity_slider16.Value = value;
+            intensity_slider17.Value = value;
+            intensity_slider18.Value = value;
         }
         public void updateUIForStimuli(TactTongueStimuli item)
         {
@@ -2461,9 +2461,9 @@ namespace TactTongue
             updateUIForStimuli(stimuli_item);
 
             StimuliParameters stimuliParameters = new StimuliParameters();
-            stimuliParameters.message_type = 0;
+            stimuliParameters.msg_type = 0;
             stimuliParameters.PP = stimuli_item.PP;
-            stimuliParameters.Pp = stimuli_item.Pp[0];
+            stimuliParameters.Pp = stimuli_item.Pp;
             stimuliParameters.IBP = stimuli_item .IBP;
             stimuliParameters.IBN = stimuli_item.IBN;
             stimuliParameters.OBN = stimuli_item.OBN;
@@ -2485,7 +2485,7 @@ namespace TactTongue
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             IntensitySliderParamters intensitySliderParamters = new IntensitySliderParamters();
-            intensitySliderParamters.message_type = 2;
+            intensitySliderParamters.msg_type = 2;
             intensitySliderParamters.Pp = getIntensityValues();
 
             string stimuli_parameters_command = JsonConvert.SerializeObject(intensitySliderParamters);
@@ -2565,11 +2565,11 @@ namespace TactTongue
         private void set_parameters_Click(object sender, RoutedEventArgs e)
         {
             StimuliParameters stimuliParameters = new StimuliParameters();
-            stimuliParameters.message_type = 0;
+            stimuliParameters.msg_type = 4;
             stimuliParameters.PP =  (int)pp_slider.Value;
             stimuliParameters.Pp =  (int)intensity_slider1.Value;
-            stimuliParameters.IBP = (int)ibn_slider.Value;
-            stimuliParameters.IBN = (int)ibp_slider.Value;
+            stimuliParameters.IBN = (int)ibn_slider.Value;
+            stimuliParameters.IBP = (int)ibp_slider.Value;
             stimuliParameters.OBN = (int)obn_slider.Value;
 
 
